@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hàm Map()</title>
+</head>
+<body>
+ 
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+      var Mutd_players = [
+            {
+            id:1,
+            name : "Ronaldo",
+            address: "Portugal",
+            "your sex" : "male"
+            } ,
+            {
+            id:2,
+            name : "Pogba",
+            address: "France",
+            "your sex" : "male"
+            },
+            {
+                id:3,
+                name : "De Gea",
+                address: "Spain",
+                "your sex" : "male"
+             },
+             {
+                id:4,
+                name : "Maria Maxwell",
+                address: "England",
+                "your sex" : "female"
+             }
+        ]
+        function getInfo(player,index) {
+
+            return {
+                id : player.id,
+                name : player.name,
+                address : player.address,
+                success : 'OK',
+                index : index
+            }
+        }
+
+    var newMutd_players = Mutd_players.map(getInfo);
+
+    console.log(newMutd_players);
+
+    //document.write(newMutd_players);
+</script>
+</html>

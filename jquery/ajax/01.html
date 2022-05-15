@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+    
+     // function load_File() {
+     //            var files = 'file-test.txt';
+     //             $('.loadfile').load(files);
+     //             alert("it is true");
+     //    }
+     
+     $(document).ready(()=>{
+
+          $("input.submit-file").on('click',function(event) {
+
+                var files = 'file-test.txt';
+
+                $('.html-text').load(files);
+
+          })
+ 
+     })
+
+    </script>
+    <style type="text/css"></style>
+</head>
+<body>
+
+    <form>
+        <input type="text" name="load-file" class="loadfile">
+        <button type="button" class="submit-file">Button</button>
+    </form>
+
+
+    <p style="margin: 20px 0px;" class="html-text">This is normal file</p>
+
+</body>
+ 
+</html>
+

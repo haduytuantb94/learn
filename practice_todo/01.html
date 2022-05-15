@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+	
+	<link href="./css/bootstrap.min.css" rel="stylesheet">
+	<link href="./css/style.css" rel="stylesheet">
+
+	<!--
+		Notice the use of %PUBLIC_URL% in the tags above.
+		It will be replaced with the URL of the `public` folder during the build.
+		Only files inside the `public` folder can be referenced from the HTML.
+		Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+		work correctly both with client-side routing and a non-root public URL.
+		Learn how to configure a non-root public URL by running `npm run build`.
+	-->
+	<title>Training React App</title>
+</head>
+<body>
+      <div class="container">
+         <div class="page-header">
+            <h1>Practice Todo_list</h1>
+         </div>
+         <div class="row">
+             <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="input-group">
+                    <input id="input_search" type="text" class="form-control" ref="search" placeholder="Search for..." />
+                    <span class="input-group-btn">
+						<button id="btn_search"  class="btn btn-info" type="button">Go!</button>
+					</span>
+                </div>
+             </div>
+            <!--Search : End  -->
+
+            <!---Sort  : Start-->
+             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="dropdown">
+                     <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                     Sort by <span class="caret"></span>
+                     </button>
+                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+						<li><a role="button" onclick="handleSort('Name','ASC')">Name ASC</a></li>
+						<li><a role="button" onclick="handleSort('Name','DESC')">Name DESC</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a role="button" onclick="handleSort('Level','ASC')">Level ASC</a></li>
+						<li><a role="button" onclick="handleSort('Level','DESC')">Level DESC</a></li>
+					</ul>
+					<span class="label label-success label-medium" id="element_sort"></span>
+                </div>
+            </div>
+
+            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                <button type="button" class="btn btn-info btn-block" id="addTask-button">Add Task</button>
+            </div>
+
+         </div>
+         <div class="append-info" style="margin-top: 20px;"></div>
+         <div class="append-info" style="margin-top: 20px;"></div>
+           
+
+        <form name="form-upload-file" enctype="multipart/form-data">
+            <input type="file" name="file-upload-2" id="file-upload" multiple />
+        </form>
+
+
+
+
+
+      </div>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./js/bootstrap/bootstrap.min.js"></script>
+	<script src="./js/bootstrap/notify.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<script src="./js/define.js"></script>
+	<script src="./js/lib.js"></script>
+	<script src="./js/main.js"></script>
+    <script>
+         var info = [{
+                name : "Tuan",
+                age : 29,
+                address : "Thai Binh"
+             },
+             {
+                name : "Linh",
+                age  :26,
+                address: "Hai Phong"
+             }
+        ];
+
+    function setInfo(info){
+         $('.append-info').append(`This is ` + info.name +` His age is `+ info.age + ` and His address is `+ info.address)   
+    }
+    var getListname =[];
+    info.forEach(function(data){
+        var name = data.name;
+        getListname.push(name);
+    })
+    for (let index = 0; index < getListname.length; index++) {
+
+        // {document.write(getListname[index]+" ");}
+        // {document.getElementsByClassName('append-info')[0].innerHTML = getListname[index];}
+        // {document.getElementById('my-box-content').innerHTML = getListname[index]}
+         
+        
+    }
+    //setInfo(info);
+    //console.log(info)
+
+
+      
+    //  $("#file-upload").on('change',function(){
+    //     var file_2 = $(this).files; 
+    //     console.log(file_2)
+    //  })
+
+     $(document).on('change', '#file-upload', function (event) {
+        var file_2 = this.files;
+        console.log(file_2)  
+        console.log(file_2[0].name) 
+        console.log(file_2[1].name) 
+        console.log(file_2[2].name) 
+     })
+
+
+
+
+
+    </script>
+</body>
+
+</html>

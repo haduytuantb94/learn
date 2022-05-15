@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Học web chuẩn</title>
+<style type="text/css">
+    li.box.active {
+      color: red;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+  var myFnc = function() {
+
+    var elmLast = $('.list li').last();
+
+    $('.list').prepend(elmLast);
+  }
+ // setInterval(myFnc, 2000);
+   
+
+   $('li.box').on('click', function(event) {
+
+          var my_var = $('li.box').index(this);
+
+             $(".rm-color").removeClass('active');
+
+             $(this).addClass('active');
+
+             $('.html-box').html(my_var);
+
+          
+          console.log(my_var);
+   });
+
+});
+</script>
+</head>
+
+<body>
+  <ul class="list">
+    <li class="box-nan rm-color">item 01</li>
+    <li class="box rm-color">item 02</li>
+    <li class="box rm-color">item 03</li>
+    <li class="box rm-color">item 04</li>
+    <li class="box rm-color">item 05</li>
+    <li class="box rm-color">item 06</li>
+  </ul>
+  <p class="html-box"></p>
+</body>
+</html>

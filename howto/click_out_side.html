@@ -1,0 +1,15 @@
+<a onclick="parentEventHandler()">
+    <p href="www.viblo.asia">Trang chủ</a>
+</a>
+<script type="text/javascript">
+// hàm callback xử lý sự kiện click vào phần tử "a"
+function parentEventHandler() {
+    alert("Bạn nhấp vào phần tử a");
+};
+
+// đoạn mã jQuery đăng ký hàm callback để xử lý sự kiện click vào phần tử "p"
+$("p").click(function (event) {
+    alert("Bạn đã nhấp vào phần tử p");
+   event.stopPropagation();
+});
+</script>

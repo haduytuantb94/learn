@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Typo | Test-drive your text</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <style>
+    body {
+  background-image: url("https://content.codecademy.com/courses/jquery/images/typetile.png");
+  background-repeat: repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.outer-container{
+  width: 100%;
+}
+h1 {
+  color: #FF6D04;
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 10px;
+  line-height: 1rem;
+  text-align: center;
+} 
+
+h2 {
+  color: #665C3D;
+  font-size: .9rem;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  text-align: center;
+} 
+
+header {
+  text-align: center;
+  font-family: "verdana";
+}
+
+.preview {
+  align: center;
+  background: white;
+  font-family: Helvetica;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0 auto 0 auto;
+
+  min-height: 150px;
+  padding: 30;
+  word-wrap: break-word;
+}
+
+textarea {
+  border-color: #E6B000;
+  border-radius: 4px;
+  border-style: solid;
+  border-width:1px;
+  display: block;
+  font-family: "Helvetica-Light", "Helvetica", "Arial", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 30px auto 30px auto;
+  padding: 20px;
+}
+
+.formHolder {
+  background-color: #665C3D;
+  border-radius: 4px 4px 0px 0px;
+  color: #FF6D04;
+  font-family: "verdana";
+  font-size: 0.75rem;
+  margin: 40px auto 0 auto;
+  padding: 20px;
+  text-transform: uppercase;
+  height: 50px;
+}
+
+.form {
+  display: inline;
+}
+
+.third {
+  height: 100%;
+  float: right;
+  text-align: center;
+}
+
+input {
+  display: inline;
+}
+
+#fonts {
+  margin-left: 4px;
+}
+
+#weight {
+}
+  </style>
+</head>
+<body>
+  <div class = "outer-container">
+  <header>
+    <h1>TYP</h1>
+    <h2>Test-drive your text</h2>
+  </header>
+  <div class="formHolder">
+    <form method="POST">
+      <div class="third">
+        Font Family <select name="fontfont" id="font">
+          <option value="helvetica" id="helvetica">Helvetica</option>
+          <option value="times" id="times">Times</option>
+          <option value="impact" id="impact">Impact</option>
+          <option value="courier" id="courier">Courier</option>
+          <option value="verdana" id="verdana">Verdana</option>
+        </select>
+      </div>
+      <div class="third">
+        Font Size  
+        <br>
+        <input type="text" placeholder="12" id="size">
+      </div>
+      <div class="third">
+        Font Weight  <select name="weight" id="weight">
+         <option value="normal">Normal</option>
+         <option value="bold">Bold</option>
+         <option value="bolder">Bolder</option>
+         <option value="lighter">lighter</option>
+       </select>
+      </div>
+    </form>
+  </div>
+  <div class="preview">Sample Font</div>
+  <textarea name="text" placeholder="Type something here and see what happens..." id="text" cols="30" rows="10"></textarea>
+  </div>
+</body>
+<script>
+  
+ $(document).ready(function() {
+    $("#text").on("keyup",function(event){
+
+      $(".preview").html($(event.currentTarget).val());
+
+    })
+    $("#font").on('change',function(event){
+        var font_fam = $(this).val();
+         $('.preview').css('font-family',font_fam);
+    })
+    $("#weight").on('change',function(event){
+        var font_wei = $(this).val();
+         $('.preview').css('font-weight',font_wei);
+    })
+     $('#size').on('keyup',function(event){
+
+         var font_siz = $(this).val() + 'px';
+         $('.preview').css('font-size',font_siz);
+     })
+});
+
+</script>
+</html>

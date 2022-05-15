@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+        // In your Javascript (external .js resource or <script> tag)
+                $(document).ready(function() {
+                    $('.js-example-basic-single').select2();
+                });
+
+
+                $(document).ready(function() {
+                   $('.js-example-basic-multiple').select2({
+                          placeholder : "I am a select",
+                          allowClear: true,
+                          maximumSelectionLength: 2
+
+                           });
+                 $(".js-example-basic-multiple").prop("disabled", false);
+
+                });
+
+    </script>
+    <style type="text/css">
+         select {
+            width: 100%;
+         }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+<select class="js-example-basic-multiple" name="states[]" multiple="multiple">
+  <option value="AL">Alabama 1</option>
+  <option value="AL">Alabama 2</option>
+  <option value="AL">Alabama 3</option>
+  <option value="AL">Alabama 4</option>
+  <option value="AL">Alabama 5</option>
+  <option value="WY">Wyoming 6</option>
+</select>
+
+<!-- <select class="js-example-basic-single" name="state">
+  <option value="AL">Alabama</option>
+  <option value="WY">Wyoming</option>
+</select> -->
+
+</body>
+</html>
+

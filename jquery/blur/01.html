@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+       
+/*
+  Mình sẽ làm một ví dụ rất phổ biến như sau: Khi nhập dữ liệu nếu
+   người dùng không nhập mà di chuyển sang chỗ khác thì thông báo 
+   họ là bắt buộc nhập.
+
+*/
+
+	$(document).ready(function () {
+        $("#username").blur(function () {
+            var value = $(this).val();
+            if (value === ''){
+                alert("Vui lòng nhập username");
+            }
+        });
+ 
+        $("#password").blur(function () {
+            var value = $(this).val();
+            if (value === ''){
+                alert("Vui lòng nhập password");
+            }
+        });
+
+  /*
+   * Khi nhấn phím Tab để chuyển ổ input thì sẽ có alert báo 'helo' và 
+   * thẻ div#other sẽ có nền background là blue
+   * 
+   */
+
+           $( "#target" ).blur(function(event){
+                	alert('helo');
+		  	    $("div#other").css("background", "blue");
+		  	    console.log(event.currentTarget);
+
+
+		  });
+
+
+    });
+                 
+    </script>
+    <style type="text/css">
+
+
+    </style>
+
+
+    <title>Document</title>
+</head>
+<body>
+
+<form>
+  <input id="target" type="text" value="Field 1">
+  <input type="text" value="Field 2">
+</form>
+<div id="other">
+  Trigger the handler
+</div>
+<button id="my-button">Button</button>
+
+
+<form>
+    <input id="username" type="text" value="" placeholder="Username"> <br/><br/>
+    <input id="password" type="password" value="" placeholder="Password"> <br/><br/>
+    <input type="text" value="LOGIN">
+</form>
+
+</body>
+</html>
+

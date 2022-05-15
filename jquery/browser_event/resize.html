@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Học web chuẩn</title>
+<style type="text/css">
+ div {
+    border: 1px solid #ccc;
+ }
+ .row {
+    display: flex;
+ }
+</style>
+
+</head>
+
+<body>
+   <div class="container">
+       <div class="row">
+           <div class="col1" style="width : 50%; height: 200px;">
+               Box_1
+           </div>
+           <div class="col2" style="width:50%; height:200px">
+               Box_2
+           </div>
+       </div>
+   </div>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+         // $(window).resize(function(event) {
+         //     alert("resize actived") ;
+         // });
+         var flag = 0;
+
+            $( window ).resize(function() {
+  
+            flag++;
+
+            if(flag <11111111111115 ) {
+
+               $( "body" ).prepend( "<div>" + $( window ).width() + "</div>" );
+               console.log($( window ).width());
+             }else {
+
+                alert("max 5 times");
+             }
+
+         });
+    })
+</script>
+</html>

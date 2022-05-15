@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Học web chuẩn</title>
+<style type="text/css">
+ div {
+    border: 1px solid #ccc;
+ }
+ .row {
+    display: flex;
+ }
+ .col {width: 50%;height: 200px;}
+</style>
+
+</head>
+
+<body>
+   <div class="container">
+       <div class="row">
+           <div class="col1 col">
+               Box_1
+           </div>
+           <div class="col2 col">
+               Box_2
+           </div>
+       </div>
+   </div>
+</body>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        
+       $(window).resize(function(){  
+
+          var browser_with = $(window).width();
+
+          console.log(browser_with);
+
+            if(browser_with >= 480 && browser_with <=768) {
+             alert("hello");
+           
+               $('.col').css('width','100%!important')
+         }
+
+       });   
+            
+    });
+</script>
+</html>

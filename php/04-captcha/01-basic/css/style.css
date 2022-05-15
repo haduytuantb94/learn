@@ -1,0 +1,44 @@
+.captcha {
+    width: 600px;
+    margin: 0 auto;
+    border: 4px solid #b58b8b;
+    height: 240px;
+    text-align: center;
+    border-radius: 10px;
+}
+form {
+    margin-top: 10px;
+}
+.form-group {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+input#input-captcha {
+    width: 52%;
+    height: 34px;
+    border-radius: 7px;
+    border: 3px solid #ccc;
+    padding: 5px;
+}
+button.btn.btn-primary {
+    color: #fff;
+    background: rgb(41, 180, 122);
+    border: unset;
+    border-radius: 5px;
+    width: 88px;
+    height: 33px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+    cursor: pointer;
+}
+button.btn.btn-primary:active {
+    border:2px solid rgb(132, 134, 133);
+    background: rgb(18, 226, 139);
+}
+.dis-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+}

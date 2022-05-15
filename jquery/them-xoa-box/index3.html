@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Học web chuẩn</title>
+<style type="text/css">
+       
+  div.item {
+    margin: 30px 10px;
+    width: 150px;
+    height: 40px;
+    border: 1px solid #f7f7f7;
+    cursor: pointer;
+  }    
+  div.container {
+    margin: 10px auto;
+    width: 200px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
+  div.item p {
+    text-align: center;
+    line-height: 7px;
+  }
+  .html-warning {
+    width: 100%;
+  }
+</style>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+      var flag = 0;
+
+      var content_1 = ' <div class="item item1"><p>This is I tem 1</p><div class="remove-item-img item">Xoa</div></div>' ;
+
+    $(".append-item-img").on('click',function() {
+
+          flag++;  //Giới hạn số lần thêm nội dung là 5
+
+         if (flag < 5) {
+         
+            $('.item_wrapper').append(content_1);
+
+         } else {
+             
+             $('p.html-warning').html('Xin lỗi chỉ có <strong>5</strong> trường' );
+         }
+       }) 
+
+      $(".remove-item-img").on('click',function() {
+
+            $('.item_wrapper .item').last().remove();
+
+    })                 
+
+});
+
+</script>
+</head>
+
+<body>
+   <div class="container">
+
+      <div class="item_wrapper">
+
+           <div class="item item1">
+
+                <p>This is I tem 1</p>
+
+           </div>
+      </div>
+
+      <div class="append-item-img item"><span>&#10010;</span></div>
+      
+    <p class="html-warning"></p>
+   </div>
+</body>
+</html>

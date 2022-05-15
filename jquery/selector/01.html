@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style type="text/css">
+        
+        p.html-text::before {
+            content: "your city is :";
+        }
+    </style>
+</head>
+<body>
+      <ul class="container">
+          <li class="item">item1</li>
+          <li class="item">item2</li>
+          <li class="item">item3</li>
+          <li class="item">item4</li>
+      </ul>
+
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+         $(document).ready(function(){
+               $('.item').each(function(index){
+                    $(this).addClass("item" + index);
+               })
+             
+           })
+    </script>
+</html>
+

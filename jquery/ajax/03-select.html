@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style type="text/css">
+        
+        p.html-text::before {
+            content: "your city is :";
+        }
+        .main-cont {
+            width: 300px;
+            height: auto;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            text-align: center;
+        }
+        .c-infomation {
+            width: 90%;
+            height: 34px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .main {
+            margin: 20px 0;
+        }
+        button {
+            background-color: blue;
+            color: #fff;
+            width: 70px;
+            height: 26px;
+            cursor: pointer;
+        }
+        button:active {
+            box-shadow: 0 1px 2px #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-cont">
+      <select name="s-learn">
+          <option class="row">Option_1</option>
+          <option class="row">Option_2</option>
+          <option class="row">Option_3</option>
+          <option class="row">Option_4</option>
+      </select>
+
+    <div class="main">
+        <p>Chap nhan dieu khoan cua chung toi</p>
+       <input name="infomation" type="checkbox" class="c-infomation"  value="2"/>
+
+       <p>Ban co muon nhan tin nhan tu chung toi khong ?</p>
+       <input name="infomation" type="checkbox" class="c-infomation" value="1"/>
+    </div>
+        <button type="button" class="btn-submit">Button</button>
+    </div>
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+
+$(document).ready(function(){
+    $('.btn-submit').on('click',function(){
+        var my_selector = $('.c-infomation');
+        var n_Array = [];
+        $.each(my_selector,function(index,data){
+            var result = $(data).prop('checked');
+            //var result = $(data).is(':checked');
+            if(result == true) {
+               var result = $(data).val();
+               n_Array.push(result)
+            }   
+        })
+        console.log(n_Array);
+        // for(var i = 0; i< ip_length; i++) {
+        //     var result = $('.c-infomation').is(':checked');
+        //     if(result) {
+        //         console.log($('.c-infomation').val());
+        //     }else {
+        //         console.log('NO checked');
+        //     }
+        // }
+    })  
+});
+    </script>
+</html>
+

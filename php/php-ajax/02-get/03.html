@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		var id = 3;
+		var url = 'files/course.php';
+		var dataSend = {id : id};
+		$('#process').click(function(){
+			$.get(url,dataSend,function(data,status){
+				    console.log(data);
+				if(data == "") {
+					alert('San pham ban tim khong co, vui long chon lai');
+				} else {
+					$('#content').html(data);
+				}
+			})
+		})
+	});
+</script>
+<body>
+	<div id="wrapper">
+		<div class="title">AJAX-GET</div>
+	</div>
+	<div class="list">
+		<h3>jQuery.get( url [, data ] [, success ] [, dataType ] )</h3>
+		<input type="button" class="button" name="process" id="process" value="Process">
+		<div id="content">Hello</div>
+	</div>
+</body>
+</html>

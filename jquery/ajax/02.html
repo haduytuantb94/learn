@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <style type="text/css">
+        
+        p.html-text::before {
+            content: "your city is :";
+        }
+        .main-cont {
+            width: 300px;
+            height: 150px;
+            margin: 0 auto;
+            border: 2px solid #ccc;
+            text-align: center;
+        }
+        .c-infomation {
+            width: 90%;
+            height: 34px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .main {
+            margin: 20px 0;
+        }
+        button {
+            background-color: blue;
+            color: #fff;
+            width: 70px;
+            height: 26px;
+            cursor: pointer;
+        }
+        button:active {
+            box-shadow: 0 1px 2px #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-cont">
+      <select name="s-learn">
+          <option class="row">Option_1</option>
+          <option class="row">Option_2</option>
+          <option class="row">Option_3</option>
+          <option class="row">Option_4</option>
+      </select>
+    <div class="main">
+        <!-- <input name="infomation" type="text" class="c-infomation" /> -->
+    </div>
+        <button type="button" class="btn-submit">Button</button>
+    </div>
+</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script type="text/javascript">
+// $(document).ready(function(){
+
+    $('.item').each(function(index){
+        $(this).addClass("item" + index);
+    })
+    
+    $('.btn-submit').on('click',function(){
+        var myArray = ['Tuan','Ngoc','Vu','Ninh'];
+        var newArray = [];
+        $.each(myArray,function(index,data){
+            if(data == 'Tuan' || data == 'Vu'){
+                var name = data;
+                newArray.push(name); 
+            }  
+        });
+        $.ajax({
+            url : 'file-test-02.php',
+            method: 'POST',
+            dataType : 'html',
+            data : {
+                newArray : newArray
+            },
+            success : function(data){
+               $('.main').html(data);
+               console.log('success');
+               
+            },
+            complete : function(jqXHR, textStatus){
+               $('.btn-submit').css('background','red');
+               console.log(jqXHR, textStatus);
+               
+            }   
+        })
+    })
+    
+    
+//})
+    </script>
+</html>
+

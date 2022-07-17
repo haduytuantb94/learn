@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="form">
+		<p>Which Category are you interested in</p>
+		<select id="category-select">
+			<option disabled selected>Please Select</option>
+			<option value="1">Furniture</option>
+			<option value="2">Lighting</option>
+			<option value="3">Accessories</option>
+		</select>
+		<select id="subCategory-select">
+	
+		</select>
+	</div>
+</body>
+<script type="text/javascript">
+  
+   function updateCategories(){
+   	var catSelect = document.getElementById("category-select");
+   	var subSelect = document.getElementById("subCategory-select");
+   	var cat_id = catSelect.options[catSelect.selectedIndex].value;
+   	var url = '01.php?id='+cat_id;   
+
+   	var xhr = new XMLHttpRequest();
+   	xhr.open('GET',url,true);
+   	xhr.onreadystatechange = function(){
+   		if(xhr.readyState == 4 && xhr.status == 200) {
+   			var json = JSON.parse(xhr.responseText);
+   			if(!json.error) {
+   			   subSelect.innerHTML = '<option value="'+ json.id +'">' + json.name + '</option>';
+   			} else {
+   				alert('Have some error');
+   			}
+   		}
+   	}
+   	xhr.send();
+   }
+
+	var catSelect = document.getElementById("category-select");
+	catSelect.addEventListener("change",updateCategories);
+
+</script>
+</html>

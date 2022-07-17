@@ -20,16 +20,42 @@
           <li class="item">item4</li>
       </ul>
 
+      <select name="s-learn">
+          <option class="row">Option_1</option>
+          <option class="row">Option_2</option>
+          <option class="row">Option_3</option>
+          <option class="row">Option_4</option>
+      </select>
+
+
 </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script type="text/javascript">
-         $(document).ready(function(){
-               $('.item').each(function(index){
-                    $(this).addClass("item" + index);
-               })
-             
-           })
+$(document).ready(function(){
+
+    $('.item').each(function(index){
+        $(this).addClass("item" + index);
+    })
+
+    var myArray = ['Tuan','Ngoc','Vu','Ninh'];
+    var newArray = [];
+    $.each(myArray,function(index,data){
+         if(data == 'Tuan' || data == 'Vu'){
+            var name = data;
+            newArray.push(name); 
+         }  
+    });
+    console.log(newArray);
+    
+
+
+
+
+
+
+    
+})
     </script>
 </html>
 

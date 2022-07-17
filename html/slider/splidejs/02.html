@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/themes/splide-skyblue.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/themes/splide-default.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css">
+    <style>
+        .splide__slide img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .splide__slide {
+           opacity: 0.6;
+        }
+
+        .splide__slide.is-active {
+           opacity: 1;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body> 
+
+    <section id="main-slider" class="splide" aria-label="Beautiful Images">
+        <div class="splide__track">
+              <ul class="splide__list">
+                  <li class="splide__slide">
+                    <img src="images/img_mountains_wide.jpg" style="width:100%">
+                  </li>
+                  <li class="splide__slide">
+                    <img src="images/img_mountains_wide.jpg" style="width:100%">
+                  </li>
+                  <li class="splide__slide">
+                    <img src="images/img_mountains_wide.jpg" style="width:100%">
+                  </li>
+              </ul>
+        </div>
+      </section>
+    
+        <section  id="thumbnail-slider"  class="splide" aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel." >
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <img src="images/img_mountains_wide.jpg" style="width:100%">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="images/img_mountains_wide.jpg" style="width:100%">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="images/img_mountains_wide.jpg" style="width:100%">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+<script>
+var main = new Splide( '#main-slider', {
+  type       : 'fade',
+  heightRatio: 0.5,
+  pagination : false,
+  arrows     : false,
+  cover      : true,
+} );
+
+var thumbnails = new Splide( '#thumbnail-slider', {
+  rewind          : true,
+  fixedWidth      : 104,
+  fixedHeight     : 58,
+  isNavigation    : true,
+  gap             : 10,
+  focus           : 'center',
+  pagination      : false,
+  cover           : true,
+  dragMinThreshold: {
+    mouse: 4,
+    touch: 10,
+  },
+  breakpoints : {
+    640: {
+      fixedWidth  : 66,
+      fixedHeight : 38,
+    },
+  },
+} );
+
+main.sync( thumbnails );
+main.mount();
+thumbnails.mount();
+</script>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="entry">
+	     Zipcode : <input type="text" name="zipcode" id="zipcode">
+	     <button type="button" id="ajax-button">Submit</button>
+	</div>
+	<div id="location">
+		
+	</div>
+</body>
+<script type="text/javascript">
+    // var api = 'https://maps.googleapis.com/maps/api/geocode/json';
+    var url = 'zipcode.json';
+    function findLocation(){
+      var zipcode = document.getElementById("zipcode");
+      // var url = api+'?address='+zipcode.value;
+      var xhr = new XMLHttpRequest();
+          xhr.open('GET',url,true);
+          xhr.onreadystatechange = function(){
+          	 if(xhr.readyState < 4) {
+
+          	    outputLocation('Loading..');
+          	 }
+          	 if(xhr.readyState == 4 && xhr.status == 200) {
+          	    var respond = JSON.parse(xhr.responseText);
+          	        console.log(respond);
+
+          	    outputLocation(respond.results[0].address_components[2].long_name);
+          	 }
+          }
+          xhr.send();
+    }
+    function outputLocation(data){
+         var location = document.getElementById("location");
+         location.innerHTML = data;
+    }
+    var button = document.getElementById("ajax-button");
+        button.addEventListener('click',findLocation);
+</script>
+</html>

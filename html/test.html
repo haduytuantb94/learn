@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		li {
+			list-style-type: none;
+			margin: 10px 2px;
+		}
+		li:hover {
+			background: #000;
+		}
+		li:hover a {
+			color: #fff;
+
+		}
+		a {
+             color: #000;
+             font-size: 16px;
+             line-height: 19px;
+             text-decoration: none;
+             padding: 5px 12px;
+             display: block;
+		}
+		ul {
+			width: 100px;
+		}
+	</style>
+</head>
+<body>
+	  <ul>
+	  	  <li><a href="#">I am a  li</a></li>
+	  	  <li><a href="#">I am a  li</a></li>
+	  	  <li><a href="#">I am a  li</a></li>
+	  	  <li><a href="#">I am a  li</a></li>
+	  </ul>
+
+
+<h1>GeeksforGeeks</h1>
+  
+    <strong>HTML label Tag </strong>
+  
+    <form>
+      <!-- label tag starts from here -->
+      <label>
+        Male
+        <input type="radio" name="gender" 
+               id="male" value="male" />
+      </label><br/>
+  
+      <label>
+        Female
+        <input type="radio" name="gender" 
+               id="female" value="female" /> 
+      </label><br/>
+  
+      <label>
+        Other
+        <input type="radio" name="gender" 
+               id="other" value="other" />
+      </label>
+      <!-- label tag ends from here -->
+    </form>
+
+
+    <button type="button" id="show-settings-link" class="button show-settings screen-meta-active" aria-controls="screen-options-wrap" aria-expanded="true">Screen Options</button>
+
+    <style>
+    	
+  .show-settings {
+    border: 1px solid #c3c4c7;
+    border-top: none;
+    height: auto;
+    margin-bottom: 0;
+    padding: 3px 6px 3px 16px;
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    color: #646970;
+    line-height: 1.7;
+    box-shadow: 0 0 0 transparent;
+    transition: box-shadow .1s linear;
+}
+
+
+    </style>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tiêu đề</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<style>
+.list0 { color: red; }
+.list1 { color: blue; }
+.list2 { color: yellow; }
+.list3 { color: green; }
+.list4 { color: gray; }
+.list5 { color: pink; }
+</style>
+<script>
+$(function(){
+    $('li').each(function(index){
+    	console.log(index);
+        $(this).click(function(){
+            $(this).addClass("list"+index);
+        });
+    });
+});
+
+
+$(window).click(function(e) {
+	var id = $(".textField");
+	  if(e.target !== id) {
+	  	 console.log("true");
+	  	 console.log(e.currentTarget);
+	  }
+	  else {
+	  	console.log('false');
+	  }
+})
+</script>
+</head>
+
+<body>
+<ul>
+<li>list 01</li>
+<li class="textField">list 02</li>
+<li>list 03</li>
+<li>list 04</li>
+<li>list 05</li>
+<li>list 06</li>
+<li>list 07</li>
+</ul>
+</body>
+</html>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tiêu đề</title>
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+    $('input').change(function() {
+        $('span').text('Trường nhập đã được thay đổi');
+    });
+    
+    $('button').click(function(){
+         $('input').change();
+         var id = $('input').value;
+        console.log(id);
+    });
+    
+});
+</script>
+</head>
+
+<body>
+<input class="textField" type="text" value="Text" /> <span></span><br>
+<button>Button</button>
+</body>
+</html>

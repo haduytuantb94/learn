@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/themes/splide-skyblue.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/themes/splide-default.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/css/splide.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="splide" aria-label="Splide Basic HTML Example">
+        <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide">
+                  <a href="#"> 
+                    <img src="images/img_mountains_wide.jpg">
+                  </a>
+                </li>
+                  <li class="splide__slide">
+                  <a href="#">
+                    <img src="images/img_snow_wide.jpg">
+                  </a>
+                </li>
+                  <li class="splide__slide">
+                    <img src="images/img_mountains_wide.jpg">
+                </li>
+                <li class="splide__slide">
+                    <img src="images/img_nature_wide.jpg">
+                </li>
+                  <li class="splide__slide">
+                    <img src="images/img_snow_wide.jpg">
+                </li>
+                  <li class="splide__slide">
+                    <img src="images/img_nature_wide.jpg">
+                </li>
+              </ul>
+        </div>
+      </section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+<script>
+var splide = new Splide( '.splide', {
+  perPage : 3,
+  cover   : true,
+  height  : '10rem',
+  lazyLoad: 'nearby',
+  width   : '90%',
+  breakpoints: {
+    height: '6rem',
+  },
+} );
+
+splide.mount();
+</script>
+</script>
+</html>

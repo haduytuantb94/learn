@@ -1,0 +1,56 @@
+# ------------- Cấm truy cập từ tất các IP----------------
+
+# Deny from all
+
+# ------------- Cấm truy cập từ địa chỉ IP cụ thể --------
+
+# Deny from 192.168.56.1
+
+# ------------- Cấm truy cập từ 1 dãy Ip cụ thể ----------
+
+# Deny from 192.168.56
+
+# ------------- Cho phép truy cập từ tất cả IP ------------------
+
+# Allow from all
+
+# ------------- Cho phép truy cập từ tất cả IP và ngoại trừ 192.168.56.1 ------------------
+
+# Allow from all
+# Deny from 192.168.56.1
+
+# ------------- Cho phép truy cập từ 1 dãy IP 192.168.56 và ngoại trừ 192.168.56.1 ------------------
+
+# Allow from 192.168.56
+# Deny from 192.168.56.1
+
+# ------------- Order deny,allow  ---------------
+# Order deny , allow
+
+# Deny from 192.168.56.1
+# Allow from 192.168.56
+
+# ------------- Order allow,deny  ---------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<script type="text/javascript">
+   $(document).ready(function(){
+   	   $('#process').click(function(){
+   	   	var config = $('#config').val();
+   	   	   $.ajax({
+   	   	   	url: 'files/02.php',
+   	   	   	data: {id: 2,name: 'PHP'},
+   	   	   	type : 'POST',
+   	   	   	timeout : 3000,
+   	   	   	// dataType: 'html',
+   	   	   	// dataType: 'json',
+
+   	   	   	success : function(data,textStatus) {
+   	   	   		// $result = JSON.stringify(data);
+                   // $('#content').html(data.name); 
+                   $('#content').html(data); 
+   	   	      	},
+
+   	   	     beforeSend : function(jqXHR,setting) {
+   	   	     	if(config != "") {
+                   setting.url = config;
+   	   	     	}
+   	   	     },
+
+   	   	     complete : function(jqXHR,textStatus) {
+   	   	     	     console.log('Complete');
+   	   	     }
+
+   	   	    })
+   	   	   // .done(function(data) {
+           //  $('#content').html(data);
+   	   	   // 	console.log("success");
+   	   	   // 	alert("Complete Action");
+   	   	   // })
+   	   	   // .fail(function(data) {
+   	   	   // 	console.log("error");
+   	   	   // 	alert("Failed Action");
+   	   	   // })
+   	   	   // .always(function() {
+   	   	   // 	console.log("complete");
+   	   	   // 	// window.location.href = 'files/01.php?name=Tuandeptrai';
+   	   	   // });
+   	   	   
+   	   })
+   })
+</script>
+
+<body>
+	<div id="wrapper">
+		<div class="title">AJAX-AJAX</div>
+	</div>
+	<div class="list">
+		<h3>jQuery.ajax( url [, data ] [, success(data,textStatus) ] [, dataType ] )</h3>
+		<input type="button" class="button" name="process" id="process" value="Process">
+		<div id="content">Hello</div>
+		<div class="config">
+			<input type="text" name="config" id="config" />
+		</div>
+	</div>
+
+</body>
+</html>

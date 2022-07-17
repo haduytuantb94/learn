@@ -1,0 +1,11 @@
+#Rewrite Url
+
+Options +FollowSymlinks
+RewriteEngine On
+
+# 01 Rewrite Rule PATTERN DESTINATION
+# http://localhost:7788/learn/php/htaccess/08/def.html
+# http://localhost:7788/learn/php/htaccess/08/abc.html
+
+RewriteRule  abc.html def.html
+RewriteRule  duytuan\-[0-9]{1,n}\.html  duytuan.php\?id\=[0-9]{1,n}

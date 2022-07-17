@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .upload-images img,
+      .upload-images {
+        width: 220px;
+        height: 104px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="file-ul">
+      <li>
+        <input type="text" class="image1" value="duytuan" id="image_1" />
+        <img src="" class="preview" />
+      </li>
+      <li>
+        <input type="file" class="image_2" />
+        <img src="" class="preview" />
+      </li>
+      <li class="image_5">
+        <input
+          type="file"  class="image" onchange="printFile(this)"  />
+        <img src="" class="preview" />
+      </li>
+      <li>
+        <button type="button" class="btn-submit">Button</button>
+      </li>
+    </ul>
+    <video class="upload-images"></video>
+    <p class="p-click" style="cursor: pointer">CLick vào day di ban oi</p>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    function printFile(el) {
+      var file_data = $(el).prop("files")[0];
+
+      var type = file_data.type;
+      var fileToLoad = file_data;
+      var fileReader = new FileReader();
+      fileReader.onload = function (fileLoadedEvent) {
+        var srcData = fileLoadedEvent.target.result;
+           
+        var newImage = document.createElement("img");
+        // var newImage = document.createElement('input');
+        newImage.src = srcData;
+        console.log(newImage);
+        
+        // newImage.type = 'file';
+        var _li = $(el).closest("li");
+        if (_li.hasClass("image_5")) {
+          _li.removeClass("image_5");
+        }
+        $(".upload-images").append(newImage.outerHTML);
+      };
+      fileReader.readAsDataURL(fileToLoad);
+    }
+
+    $(".p-click").click(function () {
+      var check = jQuery(".file-ul li").last().find('input[type="file"]').click();
+    });
+    var selector = $(".image1");
+    // console.log(typeof selector);
+
+    $(".image1").focus(function () {
+      this.value = "jhehe";
+    //   console.log(this); 
+    });
+
+    var j_selector = $("#image_1").val();
+    // console.log(j_selector);
+    
+    var mySelector = document.getElementById('image_1');
+    var val = mySelector.value ="ngọc";
+    // console.log(val);
+    
+    $('.btn-submit').click(function(){
+        var click = $('.image_2').click();
+        
+    })
+    $('.image_2').change(function(){
+        var file_data_2 = $('.image_2').prop("files")[0];
+        console.log(file_data_2);
+    })
+
+
+
+
+
+
+  </script>
+</html>

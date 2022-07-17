@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+</body>
+<script>
+  // Định nghĩa :
+  // 1. Là Hàm
+  // 2 . Truyền qua đối số
+  // 3.Được gọi lại (trong hàm nhận đối số)
+  // Ví dụ dưới đây chứng minh hàm callback() là callback function
+
+    // 3.Được gọi lại (trong hàm nhận đối số)
+    var my_func = function(callback) {
+          callback(1,2);
+    }
+    // 2.làm hàm :
+    var callback = function($number_1, $number_2) {
+        var sum = $number_1 + $number_2;
+        console.log(sum) ;
+    }
+    //1. truyền qua đối số
+    my_func(callback);
+
+</script>
+</html>

@@ -1,0 +1,13 @@
+# Không cho truy cập vào my-rose.jpg
+
+<files "my-rose.jpg">
+#Deny from all
+
+</files>
+
+# Không cho truy cập vào phần mở rộng.jpg
+
+<files "*.jpg">
+Deny from all
+
+</files>

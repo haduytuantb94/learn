@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<body>
+	<div id="main">
+		<div class="title">This is original text when the page first loads</div>
+	</div>
+	<button id="ajax-button" type="button">Update content with Ajax</button>
+
+</body>
+<script type="text/javascript">
+	function replaceText() {
+      var xhr = new XMLHttpRequest();
+      var target = document.getElementById("main");
+      xhr.open('GET','01.php',true);
+      xhr.onreadystatechange = function(){
+      	if(xhr.readyState == 2) {
+                  target.innerHTML = "Loading...";
+      	}
+      	if(xhr.readyState == 4 && xhr.status == 200) {
+      		target.innerHTML= xhr.responseText;
+      	}
+      }
+      xhr.send();        
+	}
+	var button = document.getElementById("ajax-button");
+	button.addEventListener("click",replaceText);
+</script>
+</html>

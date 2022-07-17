@@ -6,7 +6,7 @@ header('Content-type: image/jpeg');
 
 $captcha = imagecreate(100,50);
 
-imagecolorallocate($captcha,42,194,42,);
+imagecolorallocate($captcha,42,194,42);
 
 $font = 'C:\laragon\www\learn\php\04-captcha\ch0604captcha_Ryexp\ch06-04-captcha\01-basic\vnavan.ttf';
 

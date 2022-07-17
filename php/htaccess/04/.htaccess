@@ -1,0 +1,15 @@
+# ----- Cho người dùng xem tất cả các tệp tin trong thư mục         ----------
+
+# Options +Indexes
+
+# ----- Không cho người dùng xem tất cả các tệp tin trong thư mục   ----------
+
+# Options -Indexes
+
+# ----- Không cho phép view tất cả tệp tin -----------
+
+# IndexIgnore *
+
+# ----- Không cho phép view các tệp tin .php 
+
+IndexIgnore *.php
